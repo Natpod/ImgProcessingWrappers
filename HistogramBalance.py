@@ -62,23 +62,10 @@ output_file_path = args.output
 if __name__ == "__main__":
 
 
-
-
-    # Argument recognition
-
     # 1- Output folder creation 
 
-    if output_file_path:
-
-        if len(os.listdir(output_file_path)) == 0:
-        
-            print("EXITING... Output folder already exists")
-            exit(1)
-
-        else:
-
-            print("Creating output file directory")
-            os.mkdir(output_file_path)
+    print("Creating output file directory")
+    os.mkdir(output_file_path)
 
     # 2- Reading reference image in TIF/PNG/JPEG format
 
