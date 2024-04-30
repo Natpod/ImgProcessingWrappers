@@ -2,8 +2,14 @@
 
 In-house python scripts for image processing, wrapping functionalities from scikit-learn image, scipy, openCV
 
-* HistogramBalance.py : Command line interface to balance images present in an input folder using a reference image
-  
+## 1. Histogram Balance
+
+HistogramBalance.py : Command line interface to balance images present in an input folder using a reference image
+
+#### How to
+
+install miniconda, requirements in `requirements.txt`
+
 ```
 usage: HistogramBalance.py [-h] [-ref REFERENCE] [-s SOURCE] [-o [OUTPUT]]
 
