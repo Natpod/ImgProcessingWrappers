@@ -19,8 +19,6 @@ Image.MAX_IMAGE_PIXELS = None
 
 
 
-
-
 # METHODS
 
 def conv_numpy(img):
@@ -43,13 +41,13 @@ def BalanceHistogram(reference, source):
 
 parser = argparse.ArgumentParser(
                         prog='HistogramBalance.py',
-                        description='Balance de Histograma en imágenes RGB v1: Programa de python que ajusta el histograma de valores RGB de una carpeta de fotos al histograma de una imagen de referencia',
-                        epilog="\n Puede leer TIF/PNG/JPEG. \n\nArgumentos \n------------\n"
+                        description='Histogram balancing on RGB images: Python program that adjusts the histogram of RGB values of a folder of photos to the histogram of a reference image.',
+                        epilog="\nversion v.1\n----------------------------------------------------\n"
                         )
 
-parser.add_argument("-ref","--reference", help="ruta de imagen de referencia (str)", type=str)           # option that takes a value
-parser.add_argument("-s","--source", help="ruta de la carpeta con imágenes a procesar", type=str)           # option that takes a value
-parser.add_argument('-o', '--output', nargs="?", default=str(os.getcwd())+"\\"+"output", help="-opcional- nombre/ruta de la carpeta con imagenes a volcar", type=str)      # option that takes a value
+parser.add_argument("-ref","--reference", help="reference image path (str)", type=str)           # option that takes a value
+parser.add_argument("-s","--source", help="path to the folder with images to be processed", type=str)           # option that takes a value
+parser.add_argument('-o', '--output', nargs="?", default=str(os.getcwd())+"\\"+"output", help="-optional- name/path of the folder with processed images to be dumped (Default: pwd/output)", type=str)      # option that takes a value
 parser.print_help()
 
 args = parser.parse_args()
@@ -65,8 +63,12 @@ if __name__ == "__main__":
 
     # 1- Output folder creation 
 
-    print("Creating output file directory")
-    os.mkdir(output_file_path)
+    print("\nCreating output file directory")
+    try:
+        os.mkdir(output_file_path)
+    except:
+        print("EXITING... DIR not empty")
+        exit(1)
 
     # 2- Reading reference image in TIF/PNG/JPEG format
 
@@ -88,22 +90,22 @@ if __name__ == "__main__":
 
     if source_file_path: #
 
-        print("Reading source files...\n")
+        print("Reading source files...\n------\n")
 
 
         for s_filename in os.listdir(source_file_path):
 
-            print("Processing image"+str(s_filename)+"...")
+            print("Processing image"+str(s_filename)+"...\n")
             s_image = Image.open(source_file_path+"\\"+s_filename)
             
             # Convert to numpy
             s_image = conv_numpy(s_image)
 
-            print("Balancing histogram...")
+            print("Balancing histogram...\n")
             outpic = BalanceHistogram(refimg, s_image)
 
 
-            print("Writing in"+str(output_file_path)+"\\"+str(s_filename)+"png\n----------------------------\n")
+            print("Writing in PATH: "+str(output_file_path)+"\\"+str(s_filename)+"png\n----------------------------\n")
             cv2.imwrite(output_file_path+"\\"+str(s_filename)+".png", outpic)
     
     else:
