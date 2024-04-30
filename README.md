@@ -7,17 +7,17 @@ In-house python scripts for image processing, wrapping functionalities from scik
 ```
 usage: HistogramBalance.py [-h] [-ref REFERENCE] [-s SOURCE] [-o [OUTPUT]]
 
-Balance de Histograma en imágenes RGB v1: Programa de python que ajusta el histograma de valores RGB de una carpeta de
-fotos al histograma de una imagen de referencia
+Histogram balancing on RGB images: Python program that adjusts the histogram of RGB values of a folder of photos to
+the histogram of a reference image.
 
 options:
   -h, --help            show this help message and exit
   -ref REFERENCE, --reference REFERENCE
-                        ruta de imagen de referencia (str)
+                        reference image path (str)
   -s SOURCE, --source SOURCE
-                        ruta de la carpeta con imágenes a procesar
+                        path to the folder with images to be processed
   -o [OUTPUT], --output [OUTPUT]
-                        -opcional- nombre/ruta de la carpeta con imagenes a volcar
+                        -optional- name/path of the folder with processed images to be dumped
 
-Puede leer TIF/PNG/JPEG.
+version v.1 ----------------------------------------------------
 ```
