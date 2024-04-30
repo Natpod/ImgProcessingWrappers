@@ -49,7 +49,7 @@ parser = argparse.ArgumentParser(
 
 parser.add_argument("-ref","--reference", help="ruta de imagen de referencia (str)", type=str)           # option that takes a value
 parser.add_argument("-s","--source", help="ruta de la carpeta con imágenes a procesar", type=str)           # option that takes a value
-parser.add_argument('-o', '--output', nargs="?", default=str(os.getcwd())+"\\"+"output", help="-opcional- nombre/ruta de la carpeta con imagenes a volcar" type=str)      # option that takes a value
+parser.add_argument('-o', '--output', nargs="?", default=str(os.getcwd())+"\\"+"output", help="-opcional- nombre/ruta de la carpeta con imagenes a volcar", type=str)      # option that takes a value
 parser.print_help()
 
 args = parser.parse_args()
