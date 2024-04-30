@@ -42,8 +42,8 @@ def BalanceHistogram(reference, source):
     return matched 
 
 parser = argparse.ArgumentParser(
-                        prog='Balance de Histograma en imágenes RGB v1',
-                        description='Programa de python que ajusta el histograma de valores RGB de una carpeta de fotos al histograma de una imagen de referencia',
+                        prog='HistogramBalance.py',
+                        description='Balance de Histograma en imágenes RGB v1: Programa de python que ajusta el histograma de valores RGB de una carpeta de fotos al histograma de una imagen de referencia',
                         epilog="\n Puede leer TIF/PNG/JPEG. \n\nArgumentos \n------------\n"
                         )
 
