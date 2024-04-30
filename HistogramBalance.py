@@ -44,12 +44,13 @@ def BalanceHistogram(reference, source):
 parser = argparse.ArgumentParser(
                         prog='Balance de Histograma en imágenes RGB v1',
                         description='Programa de python que ajusta el histograma de valores RGB de una carpeta de fotos al histograma de una imagen de referencia',
-                        epilog="\n Puede leer TIF/PNG/JPEG. \n\nArgumentos \n------------\n (1) -ref : imagen de referencia \n (2) -s : source- ruta de la carpeta con imágenes a procesar \n (3) -o: (opcional) nombre/ruta de la carpeta con imagenes a volcar"
+                        epilog="\n Puede leer TIF/PNG/JPEG. \n\nArgumentos \n------------\n"
                         )
 
-parser.add_argument("-ref","--reference", type=str)           # option that takes a value
-parser.add_argument("-s","--source", type=str)           # option that takes a value
-parser.add_argument('-o', '--output', nargs="?", default=str(os.getcwd())+"\\"+"output", type=str)      # option that takes a value
+parser.add_argument("-ref","--reference", help="ruta de imagen de referencia (str)", type=str)           # option that takes a value
+parser.add_argument("-s","--source", help="ruta de la carpeta con imágenes a procesar", type=str)           # option that takes a value
+parser.add_argument('-o', '--output', nargs="?", default=str(os.getcwd())+"\\"+"output", help="-opcional- nombre/ruta de la carpeta con imagenes a volcar" type=str)      # option that takes a value
+parser.print_help()
 
 args = parser.parse_args()
 ref_file_path = args.reference
