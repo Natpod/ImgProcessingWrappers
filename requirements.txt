@@ -1,0 +1,5 @@
+scikit-image              0.22.0          py311hb4ba03d_0
+numpy                     1.24.3          py311hdab7c0b_1
+numpy-base                1.24.3          py311hd01c5d8_1
+opencv-python             4.6.0.66                 pypi_0    pypi
+pillow                    10.2.0          py311h2bbff1b_0
