@@ -39,27 +39,28 @@ def BalanceHistogram(reference, source):
     matched = cv2.cvtColor(matched, cv2.COLOR_BGR2RGB)
     return matched 
 
-parser = argparse.ArgumentParser(
-                        prog='HistogramBalance.py',
-                        description='Histogram balancing on RGB images: Python program that adjusts the histogram of RGB values of a folder of photos to the histogram of a reference image.',
-                        epilog="\nversion v.1\n----------------------------------------------------\n"
-                        )
 
-parser.add_argument("-ref","--reference", help="reference image path (str)", type=str)           # option that takes a value
-parser.add_argument("-s","--source", help="path to the folder with images to be processed", type=str)           # option that takes a value
-parser.add_argument('-o', '--output', nargs="?", default=str(os.getcwd())+"\\"+"output", help="-optional- name/path of the folder with processed images to be dumped (Default: pwd/output)", type=str)      # option that takes a value
-parser.print_help()
-
-args = parser.parse_args()
-ref_file_path = args.reference
-source_file_path = args.source
-output_file_path = args.output
 
 
 # MAIN
 
 if __name__ == "__main__":
 
+    parser = argparse.ArgumentParser(
+                        prog='HistogramBalance.py',
+                        description='Histogram balancing on RGB images: Python program that adjusts the histogram of RGB values of a folder of photos to the histogram of a reference image.',
+                        epilog="\nversion v.1\n----------------------------------------------------\n"
+                        )
+
+    parser.add_argument("-ref","--reference", help="reference image path (str)", type=str)           # option that takes a value
+    parser.add_argument("-s","--source", help="path to the folder with images to be processed", type=str)           # option that takes a value
+    parser.add_argument('-o', '--output', nargs="?", default=str(os.getcwd())+"\\"+"output", help="-optional- name/path of the folder with processed images to be dumped (Default: pwd/output)", type=str)      # option that takes a value
+    parser.print_help()
+
+    args = parser.parse_args()
+    ref_file_path = args.reference
+    source_file_path = args.source
+    output_file_path = args.output
 
     # 1- Output folder creation 
 
