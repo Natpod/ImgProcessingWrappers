@@ -89,14 +89,12 @@ if __name__ == "__main__":
     if source_file_path: #
 
         print("Reading source files...\n")
-        # Leer la imagen
 
-        ref_image = Image.open(source_file_path)
 
         for s_filename in os.listdir(source_file_path):
 
             print("Processing image"+str(s_filename)+"...")
-            s_image = Image.open(s_filename)
+            s_image = Image.open(source_file_path+"\\"+s_filename)
             
             # Convert to numpy
             s_image = conv_numpy(s_image)
