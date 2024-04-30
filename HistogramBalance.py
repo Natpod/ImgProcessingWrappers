@@ -49,7 +49,7 @@ parser = argparse.ArgumentParser(
 
 parser.add_argument("-ref","--reference", type=str)           # option that takes a value
 parser.add_argument("-s","--source", type=str)           # option that takes a value
-parser.add_argument('-o', '--output', nargs="?", default=str(os.getcwd())+"\\\\"+"output", type=str)      # option that takes a value
+parser.add_argument('-o', '--output', nargs="?", default=str(os.getcwd())+"\\"+"output", type=str)      # option that takes a value
 
 args = parser.parse_args()
 ref_file_path = args.reference
@@ -117,8 +117,8 @@ if __name__ == "__main__":
             outpic = BalanceHistogram(refimg, s_image)
 
 
-            print("Writing in"+str(output_file_path)+"\\\\"+str(s_filename)+"png\n----------------------------\n")
-            cv2.imwrite(output_file_path+"\\\\"+str(s_filename)+".png", outpic)
+            print("Writing in"+str(output_file_path)+"\\"+str(s_filename)+"png\n----------------------------\n")
+            cv2.imwrite(output_file_path+"\\"+str(s_filename)+".png", outpic)
     
     else:
 
