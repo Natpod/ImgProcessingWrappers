@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 # CIB NATALIA GARCÍA SANCHEZ
 # FECHA: 30/04/2022
 # v1
@@ -66,7 +68,7 @@ if __name__ == "__main__":
 
     print("\nCreating output file directory")
     try:
-        os.mkdir(output_file_path)
+        os.mkdir(output_file_path+"\\"+"output")
     except:
         print("EXITING... DIR not empty")
         exit(1)
