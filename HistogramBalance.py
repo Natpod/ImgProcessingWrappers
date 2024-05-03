@@ -108,8 +108,8 @@ if __name__ == "__main__":
             outpic = BalanceHistogram(refimg, s_image)
 
 
-            print("Writing in PATH: "+str(output_file_path)+"\\"+str(s_filename)+"png\n----------------------------\n")
-            cv2.imwrite(output_file_path+"\\"+str(s_filename)+".png", outpic)
+            print("Writing in PATH: "+str(output_file_path)+"\\"+str(s_filename)+".png\n----------------------------\n")
+            cv2.imwrite(output_file_path+"\\"+"output"+"\\"+str(s_filename)+".png", outpic)
     
     else:
 
