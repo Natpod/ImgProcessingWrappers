@@ -27,3 +27,5 @@ options:
 
 version v.1 ----------------------------------------------------
 ```
+
+TODO: Works currently for windows path file format, support for Linux
